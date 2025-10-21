@@ -9,7 +9,7 @@ description:
 A Mindustry mod library for (H)JSON, JavaScript and Java mods,
 including a crafter supporting multiple recipes for items, fluids, power, heat and payloads production.
 Please check the repository below to learn more.
-Work on v136 to v146.
+Work on v147+ (or at least I hope so).
 '''
 version: "2.0.0"
 minGameVersion: "147"
