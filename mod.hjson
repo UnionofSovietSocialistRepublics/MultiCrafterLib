@@ -1,4 +1,4 @@
-displayName: "MultiCrafter Lib"
+displayName: "MultiCrafter Lib V8"
 name: "multi-crafter"
 author: "[#42a5f5[]]Liplum[[]] & Jojo"
 subtitle: "For JSON and Javascript mods."
@@ -12,6 +12,6 @@ Please check the repository below to learn more.
 Work on v136 to v146.
 '''
 version: "2.0.0"
-minGameVersion: "136"
+minGameVersion: "147"
 java: true
 hidden: true
