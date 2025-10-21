@@ -33,7 +33,7 @@ allprojects {
         resolutionStrategy {
             eachDependency {
                 if(this.requested.group == "com.github.Anuken.Arc") {
-                    this.useVersion("v147")
+                    this.useVersion("v150")
                 }
             }
         }
@@ -49,14 +49,14 @@ allprojects {
 }
 mindustry {
     dependency {
-        mindustry on "v147"
-        arc on "v147"
+        mindustry on "v150"
+        arc on "v150"
     }
     client {
-        mindustry official "v147"
+        mindustry official "v150"
     }
     server {
-        mindustry official "v147"
+        mindustry official "v150"
     }
     run {
         clearOtherMods
@@ -73,21 +73,21 @@ tasks.register<net.liplum.DistributeInjection>("distInjection") {
     excludeFolders.add(File("META-INF"))
 }
 
-tasks.register("retrieveMeta") {
-    doLast {
-        println("::set-output name=header::${rootProject.name} v$version on Mindustry v${mindustry.meta.minGameVersion}")
-        println("::set-output name=version::v$version")
-        try {
-            val releases = java.net.URL("https://api.github.com/repos/liplum/MultiCrafterLib/releases").readText()
-            val gson = com.google.gson.Gson()
-            val info = gson.fromJson<List<Map<String, Any>>>(releases, List::class.java)
-            val tagExisted = info.any {
-                it["tag_name"] == "v$version"
-            }
-            println("::set-output name=tag_exist::$tagExisted")
-        } catch (e: Exception) {
-            println("::set-output name=tag_exist::false")
-            logger.warn("Can't fetch the releases", e)
-        }
-    }
-}
+//tasks.register("retrieveMeta") {
+//    doLast {
+//        println("::set-output name=header::${rootProject.name} v$version on Mindustry v${mindustry.meta.minGameVersion}")
+//        println("::set-output name=version::v$version")
+//        try {
+//            val releases = java.net.URL("https://api.github.com/repos/liplum/MultiCrafterLib/releases").readText()
+//            val gson = com.google.gson.Gson()
+//            val info = gson.fromJson<List<Map<String, Any>>>(releases, List::class.java)
+//            val tagExisted = info.any {
+//                it["tag_name"] == "v$version"
+//            }
+//            println("::set-output name=tag_exist::$tagExisted")
+//        } catch (e: Exception) {
+//            println("::set-output name=tag_exist::false")
+//            logger.warn("Can't fetch the releases", e)
+//        }
+//    }
+//}
