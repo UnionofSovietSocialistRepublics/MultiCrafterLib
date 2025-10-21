@@ -4,6 +4,7 @@ plugins {
     `maven-publish`
     id("io.github.liplum.mgpp") version "1.3.2"
 }
+
 buildscript {
     repositories {
         mavenCentral()
